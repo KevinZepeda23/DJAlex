@@ -42,37 +42,35 @@ nav ul li a {
 }
 
 .hero {
-    background-image: url('hero-background.jpg');
+    background-image: url('../assets/alexdj.jpg');
     background-size: cover;
     background-position: center;
-    padding: 150px 0;
     position: relative;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 150px 0;
+    color: white;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-text {
     position: relative;
     z-index: 1;
-    color: white;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Añade un fondo oscuro semitransparente para el texto */
+    border-radius: 10px;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 60px;
     margin: 0;
 }
 
 .hero p {
     font-size: 24px;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .hero .btn {
@@ -82,6 +80,16 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     border-radius: 5px;
+}
+
+.hero-image {
+    max-width: 50%;
+    padding-right: 50px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 section#latest-releases {
@@ -124,4 +132,79 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero {
+        padding: 100px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 80%;
+        padding-right: 0;
+        margin-top: 20px;
+    }
+
+    .releases {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    section#latest-releases h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero .btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .hero {
+        padding: 80px 10px;
+    }
+
+    section#latest-releases h2 {
+        font-size: 24px;
+    }
+
+    .release h3 {
+        font-size: 20px;
+    }
+
+    .release {
+        padding: 15px;
+    }
 }
