@@ -71,16 +71,18 @@ nav ul li a:hover {
     margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Alinea los elementos al principio para mejor separación */
     position: relative;
     z-index: 2;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
 }
 
 .hero .text {
     max-width: 500px;
-    background-color: rgba(248, 248, 248, 0.2); /* Fondo oscuro detrás del texto */
+    background-color: rgba(248, 248, 248, 0.2); /* Fondo más transparente detrás del texto */
     padding: 20px;
     border-radius: 10px;
+    margin-right: 20px; /* Espacio entre TEXT y DJ-NAME */
 }
 
 .hero h1 {
@@ -106,9 +108,11 @@ nav ul li a:hover {
 }
 
 .hero .dj-name {
+    max-width: 400px; /* Ajusta según sea necesario */
     background-color: rgba(248, 248, 248, 0.2); /* Fondo más transparente detrás del texto */
     padding: 20px;
     border-radius: 10px;
+    margin-right: 0; /* Elimina el margen derecho en el último elemento */
 }
 
 .hero .dj-name h2 {
@@ -125,19 +129,20 @@ nav ul li a:hover {
     animation: fadeInRight 1.2s ease-in-out;
 }
 
+/* Cambios realizados: Iconos de redes sociales en disposición horizontal y más grandes */
 .social-icons {
     position: absolute;
-    top: 20px;
+    bottom: 80px; /* Ajusta esta distancia desde la parte inferior según tus necesidades */
     right: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: flex; /* Cambiado de 'column' a 'row' */
+    flex-direction: row; /* Los iconos estarán en fila */
+    gap: 20px; /* Mayor espacio entre los iconos */
     z-index: 2;
 }
 
 .social-icons a {
     color: #fff;
-    font-size: 20px;
+    font-size: 30px; /* Aumento del tamaño de los iconos */
     transition: transform 0.3s, color 0.3s;
 }
 
@@ -174,4 +179,90 @@ footer {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+/* Media Queries para Responsividad */
+
+@media (max-width: 1200px) {
+    .hero .text {
+        margin-right: 10px;
+    }
+
+    .hero .dj-name {
+        max-width: 300px; /* Ajusta según sea necesario */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .hero {
+        padding: 100px 10px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero .text, .hero .dj-name {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px; /* Espacio entre los bloques en pantallas pequeñas */
+    }
+
+    .social-icons {
+        right: 20px;
+        bottom: 60px; /* Ajusta esta distancia para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero .btn {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+
+    .social-icons {
+        right: 10px;
+        bottom: 40px; /* Ajusta esta distancia para pantallas más pequeñas */
+    }
+}
+/* Animación de neón */
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 15px #00aaff, 0 0 20px #00aaff, 0 0 25px #00aaff, 0 0 30px #00aaff, 0 0 35px #00aaff;
+    }
+    100% {
+        text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 30px #00aaff, 0 0 40px #00aaff, 0 0 50px #00aaff, 0 0 60px #00aaff, 0 0 70px #00aaff;
+    }
+}
+
+.hero .text:hover,
+.hero .dj-name:hover {
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
 }
