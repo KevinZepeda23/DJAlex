@@ -42,11 +42,28 @@ nav ul li a:hover {
 }
 
 .hero {
-    background: linear-gradient(135deg, #1e1e2e, #0c0627);
-    color: #fff;
-    padding: 150px 20px;
-    text-align: left;
+    height: 100vh;
+    background-image: url('../assets/dj2.jpg'); /* Cambia 'dj2.jpg' por el nombre de tu imagen */
+    background-size: cover;
+    background-position: center;
     position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 150px 20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Filtro oscuro para mejorar la legibilidad */
+    z-index: 0;
 }
 
 .hero .content {
@@ -61,6 +78,9 @@ nav ul li a:hover {
 
 .hero .text {
     max-width: 500px;
+    background-color: rgba(248, 248, 248, 0.2); /* Fondo oscuro detrás del texto */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .hero h1 {
@@ -83,6 +103,12 @@ nav ul li a:hover {
     font-size: 18px;
     border-radius: 5px;
     animation: fadeInLeft 1.4s ease-in-out;
+}
+
+.hero .dj-name {
+    background-color: rgba(248, 248, 248, 0.2); /* Fondo más transparente detrás del texto */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .hero .dj-name h2 {
@@ -120,6 +146,14 @@ nav ul li a:hover {
     color: #00aaff;
 }
 
+footer {
+    background-color: #02031a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Animaciones */
 @keyframes fadeInLeft {
     0% {
         opacity: 0;
@@ -140,11 +174,4 @@ nav ul li a:hover {
         opacity: 1;
         transform: translateX(0);
     }
-}
-
-footer {
-    background-color: #02031a;
-    color: white;
-    padding: 20px;
-    text-align: center;
 }
