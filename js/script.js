@@ -12,3 +12,11 @@ document.querySelectorAll('nav a').forEach(anchor => {
         });
     });
 });
+document.querySelector('.submit-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    this.classList.add('clicked');
+    setTimeout(() => {
+        this.classList.remove('clicked');
+        alert('¡Mensaje enviado con éxito!');
+    }, 1000);
+});
